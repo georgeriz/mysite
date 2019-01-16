@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from django.forms import ModelForm
 
 from django.db import models
 
@@ -11,3 +12,8 @@ class Answer(models.Model):
 	mail_text = models.CharField(max_length=200)
 	user_text = models.CharField(max_length=200)
 	answer_date = models.DateTimeField()
+	
+class AnswerForm(ModelForm):
+    class Meta:
+        model = Answer
+        fields = ['answer_text', 'feedback_text']
