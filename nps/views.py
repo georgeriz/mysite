@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
-from .models import Answer
+from .models import Answer, AnswerForm
 
 def index(request):
 	# TODO return template instead
