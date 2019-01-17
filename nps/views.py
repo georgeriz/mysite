@@ -6,7 +6,7 @@ from .models import Answer, AnswerForm
 def index(request):
 	# TODO return template instead
 	answer_list = Answer.objects.all()
-	output = '<br/>'.join([a.answer_text for a in answer_list])
+	output = '<br/>'.join([str(a) for a in answer_list])
 	return HttpResponse(output)
 	
 def submit_answer(request):
